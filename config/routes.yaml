@@ -1,0 +1,26 @@
+/: 
+   path: /
+   controller: App\Controller\IndexController::index
+
+
+/proyecto:
+    path: /proyecto/{num}
+    controller: App\Controller\ProyectosController::index 
+
+/contacta:
+    path: /contacta
+    controller: App\Controller\ContactaController::index 
+
+/Nosotros:
+    path: /nosotros
+    controller: App\Controller\NosotrosController::index 
+
+/Servicios:
+    path: /servicios
+    controller: App\Controller\ServiciosController::index 
+
+/Login:
+    path: /login
+    controller: App\Controller\LoginController::index 
+
+ 
