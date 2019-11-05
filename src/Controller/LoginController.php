@@ -3,17 +3,24 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class LoginController extends AbstractController
 {
-    /**
-     * @Route("/login", name="login")
-     */
-    public function index()
+    public function index(Request $request)
     {
-        return $this->render('login/index.html.twig', [
-            'controller_name' => 'LoginController',
-        ]);
+        $EstaLogejat = false;
+        $username = $request->request->get('user');
+        if($username != null){
+            $EstaLogejat = true;
+            return $this->render('index/index.html.twig', [
+                'EstaLogejat' => $EstaLogejat,
+            ]);
+        }else{
+            return $this->render('login/login.html.twig', [
+                'controller_name' => 'LoginController',
+                'EstaLogejat' => $EstaLogejat,
+            ]);
+        }
     }
 }
